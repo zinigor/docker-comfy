@@ -12,7 +12,7 @@ services:
     image: traefik:v2.11
     command: --providers.docker
     ports:
-      - 80:80
+      - 8188:8188
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 
@@ -34,5 +34,12 @@ services:
         - path: ./backend/package.json
           action: rebuild
     labels:
-      traefik.http.routers.backend.rule: Host(`localhost`) && PathPrefix(`/api`)
-      traefik.http.services.backend.loadbalancer.server.port: 3000
+      traefik.http.routers.backend.rule: Host(`localhost`)
+      traefik.http.services.backend.loadbalancer.server.port: 8188
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
