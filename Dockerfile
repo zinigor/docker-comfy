@@ -7,43 +7,6 @@
 FROM node:20 AS base
 WORKDIR /usr/local/app
 
-################## CLIENT STAGES ##################
-
-###################################################
-# Stage: client-base
-#
-# This stage is used as the base for the client-dev and client-build stages,
-# since there are common steps needed for each.
-###################################################
-FROM base AS client-base
-COPY client/package.json client/yarn.lock ./
-RUN --mount=type=cache,id=yarn,target=/usr/local/share/.cache/yarn \
-    yarn install
-COPY client/.eslintrc.cjs client/index.html client/vite.config.js ./
-COPY client/public ./public
-COPY client/src ./src
-
-###################################################
-# Stage: client-dev
-# 
-# This stage is used for development of the client application. It sets 
-# the default command to start the Vite development server.
-###################################################
-FROM client-base AS client-dev
-CMD ["yarn", "dev"]
-
-###################################################
-# Stage: client-build
-#
-# This stage builds the client application, producing static HTML, CSS, and
-# JS files that can be served by the backend.
-###################################################
-FROM client-base AS client-build
-RUN yarn build
-
-
-
-
 ###################################################
 ################  BACKEND STAGES  #################
 ###################################################
