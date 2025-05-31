@@ -11,5 +11,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD [ "python", "./backend/ComfyUI/main.py" ]
-
+CMD [ "python", "./backend/ComfyUI/main.py", "--listen" ]

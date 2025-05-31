@@ -4,22 +4,11 @@
 services:
 
   ###################################################
-  # Service: proxy
-  #
-  # We expose port 80 to connect to the proxy from the host machine.
-  ###################################################
-  proxy:
-    image: traefik:v2.11
-    command: --providers.docker
-    ports:
-      - 8188:8188
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-
-  ###################################################
   # Service: backend
   ###################################################
   backend:
+    ports:
+      - 8182:8188
     image: pytorch/pytorch
     build:
       context: ./
