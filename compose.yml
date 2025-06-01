@@ -9,7 +9,7 @@ services:
   backend:
     ports:
       - 8182:8188
-    image: zinigor/comfy:0.4
+    image: zinigor/comfy:0.5
     build:
       context: ./
       target: backend-dev

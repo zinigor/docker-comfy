@@ -4,3 +4,6 @@
 [submodule "backend/SageAttention"]
 	path = backend/SageAttention
 	url = https://github.com/thu-ml/SageAttention.git
+[submodule "backend/ComfyUI-Manager"]
+	path = backend/ComfyUI-Manager
+	url = https://github.com/ltdrdata/ComfyUI-Manager

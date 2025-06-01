@@ -3,8 +3,7 @@
 set -eu
 
 cd SageAttention
-pip install packaging setuptools
-python "./setup.py" install
+conda run -n comfy --live-stream python "setup.py" install
 
-cd ../
-python "./ComfyUI/main.py" --listen
+cd ../ComfyUI
+conda run -n comfy --live-stream python "main.py" --listen
