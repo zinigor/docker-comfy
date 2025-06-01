@@ -9,12 +9,12 @@ services:
   backend:
     ports:
       - 8182:8188
-    image: zinigor/comfy:0.5
+    image: zinigor/comfy:0.6
     build:
       context: ./
       target: backend-dev
     environment:
-      DUMMY: true
+      __COMFYUI_DESKTOP_VERSION__: 0.3.39
     deploy:
       resources:
         reservations:

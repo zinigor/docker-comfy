@@ -7,7 +7,7 @@ COPY ./backend/ComfyUI-Manager ./ComfyUI/custom_nodes/ComfyUI-Manager
 COPY ./backend/SageAttention ./SageAttention
 COPY ./backend/provision.sh ./provision.sh
 RUN conda create -n comfy python=3.12
-RUN conda install -n comfy anaconda::git
+RUN conda install -n comfy anaconda::git conda-forge::libgl conda-forge::libglib
 RUN conda run -n comfy pip install -r ./ComfyUI/requirements.txt
 
 CMD [ "./provision.sh" ]
