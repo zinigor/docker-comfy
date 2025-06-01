@@ -1,0 +1,11 @@
+{
+  "port": 80,
+  "baseURL": "",
+  "address": "",
+  "log": "stdout",
+  "database": "/workspace/filebrowser.db",
+  "root": "/workspace/ComfyUI"
+  "auth": {
+    "method": "noauth"
+  }
+}

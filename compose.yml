@@ -8,8 +8,8 @@ services:
   ###################################################
   backend:
     ports:
-      - 8182:8188
-    image: zinigor/comfy:0.6
+      - 8188:8188
+    image: zinigor/comfy:0.7
     build:
       context: ./
       target: backend-dev
@@ -22,3 +22,7 @@ services:
             - driver: nvidia
               count: 1
               capabilities: [gpu]
+  filebrowser:
+    image: filebrowser/filebrowser:s6
+    ports:
+      - 8080:80
