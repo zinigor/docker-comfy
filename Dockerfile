@@ -7,7 +7,4 @@ COPY ./backend/SageAttention ./SageAttention
 COPY ./backend/provision.sh ./provision.sh
 RUN pip install --no-cache-dir -r ./ComfyUI/requirements.txt
 
-# RUN pip install packaging setuptools
-# RUN python ./SageAttention/setup.py install
-
 CMD [ "./provision.sh" ]
