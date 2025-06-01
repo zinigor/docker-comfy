@@ -9,22 +9,12 @@ services:
   backend:
     ports:
       - 8182:8188
-    image: pytorch/pytorch
+    image: zinigor/comfy:0.4
     build:
       context: ./
       target: backend-dev
     environment:
       DUMMY: true
-    develop:
-      watch:
-        - path: ./backend/src
-          action: sync
-          target: /usr/local/app/src
-        - path: ./backend/package.json
-          action: rebuild
-    labels:
-      traefik.http.routers.backend.rule: Host(`localhost`)
-      traefik.http.services.backend.loadbalancer.server.port: 8188
     deploy:
       resources:
         reservations:
