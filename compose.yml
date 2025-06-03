@@ -11,10 +11,12 @@ services:
       - 8188:8188
       - 2222:22
       - 3000:3000
-    image: zinigor/comfy:0.8
+    image: zinigor/comfy:0.9
+    env_file: .env
+    # environment:
+    # PUBLIC_KEY: You can also put your key in the .env file when running docker compose.
     build:
       context: ./
-      target: backend-dev
     deploy:
       resources:
         reservations:

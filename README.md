@@ -1,7 +1,7 @@
 # ComfyUI bare bones installation
 
 This is a docker image project that provides a bare bones ComfyUI installation.
-It's supplied with a SageAttention 2.x binary that gets build on provisioning, taking
+It's supplied with a SageAttention 2.x binary that gets built on provisioning, taking
 some time.
 
 ## Current versions:
@@ -15,7 +15,5 @@ some time.
 - [x] Make ComfyUI run.
 - [x] Make SageAttention compile at first run of the image.
 - [x] Make ComfyUI work with custom node manager.
-- [ ] Add a separate user to avoid running as root.
-- [ ] Add some kind of file manager for easier uploads and downloads.
-      
-      
+- [x] Add Jupyter Lab at port 3000. Note: the auth is disabled.
+- [  ] Don't disable Jupyter auth, instead use an ENV variable.

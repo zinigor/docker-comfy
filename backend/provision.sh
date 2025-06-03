@@ -1,7 +1,15 @@
-#!/bin/sh
+#!/bin/bash
 
-set -eu
+set -euo pipefail
 
+mkdir -p ~/.ssh;
+cd "$_";
+chmod 700 ~/.ssh;
+echo "$PUBLIC_KEY" >> authorized_keys;
+chmod 700 authorized_keys;
+service ssh start
+
+cd /workspace
 conda run -n comfy jupyter lab --LabApp.token="" --allow-root --ip "0.0.0.0" -y 2>&1 &
 
 cd SageAttention

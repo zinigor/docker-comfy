@@ -4,6 +4,7 @@ WORKDIR /workspace
 
 ENV __COMFYUI_DESKTOP_VERSION__="0.3.39"
 ENV JUPYTER_PORT="3000"
+ENV DEBIAN_FRONTEND="noninteractive"
 
 RUN apt update && apt install -y openssh-server
 COPY ./backend/ComfyUI ./ComfyUI
