@@ -10,12 +10,11 @@ services:
     ports:
       - 8188:8188
       - 2222:22
-    image: zinigor/comfy:0.7
+      - 3000:3000
+    image: zinigor/comfy:0.8
     build:
       context: ./
       target: backend-dev
-    environment:
-      __COMFYUI_DESKTOP_VERSION__: 0.3.39
     deploy:
       resources:
         reservations:
