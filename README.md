@@ -5,7 +5,7 @@ It's supplied with a SageAttention 2.x binary that gets built on provisioning, t
 some time.
 
 ## Current versions:
-- **ComfyUI**: 0.3.40
+- **ComfyUI**: 0.3.41
 - **ComfyUi Frontend**: 1.21.7
 - **ComfyUI Workflow Templates**: 0.1.25
 - Python: 3.12
