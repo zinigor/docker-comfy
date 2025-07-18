@@ -6,10 +6,10 @@ some time.
 
 ## Current versions:
 - **ComfyUI**: 0.3.41
-- **ComfyUi Frontend**: 1.21.7
-- **ComfyUI Workflow Templates**: 0.1.25
+- **ComfyUi Frontend**: 1.23.4
+- **ComfyUI Workflow Templates**: 0.1.36
 - Python: 3.12
-- SageAttention: 2.0.1
+- SageAttention: 2.2.0
 
 ## TODO
 - [x] Make ComfyUI run.
